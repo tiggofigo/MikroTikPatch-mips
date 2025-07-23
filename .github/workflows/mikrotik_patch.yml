@@ -33,7 +33,7 @@ jobs:
         MIKRO_LICENSE_PUBLIC_KEY: ${{ secrets.MIKRO_LICENSE_PUBLIC_KEY }}
         MIKRO_NPK_SIGN_PUBLIC_KEY: ${{ secrets.MIKRO_NPK_SIGN_PUBLIC_KEY }}
       run: |
-        python3 patch.py npk routeros-mmips-6.47.9.npk
+        python3 patch.py npk routeros-mmips-6.47.9.npk -o routeros-mmips-6.47.9-patched.npk
 
     - name: Upload patched file
       uses: actions/upload-artifact@v4
