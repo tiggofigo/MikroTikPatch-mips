@@ -96,7 +96,7 @@ jobs:
 
     - name: Get netinstall-${{ env.LATEST_VERSION }}.zip
       run: |
-        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://download.mikrotik.com/routeros/$LATEST_VERSION/netinstall-$LATEST_VERSION.zip
+        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://www.mikrotik-software.de/downloads/netinstall-6.47.9.zip
         sudo unzip netinstall-$LATEST_VERSION.zip
         sudo rm netinstall-$LATEST_VERSION.zip
 
@@ -107,7 +107,7 @@ jobs:
 
     - name: Get mikrotik-${{ env.LATEST_VERSION }}.iso
       run: |
-        sudo wget -nv -O mikrotik-$LATEST_VERSION.iso https://download.mikrotik.com/routeros/$LATEST_VERSION/mikrotik-$LATEST_VERSION.iso
+        sudo wget -nv -O mikrotik-$LATEST_VERSION.iso https://www.mikrotik-software.de/downloads/mikrotik-6.47.9.iso
 
     - name: Patch mikrotik-${{ env.LATEST_VERSION }}.iso
       run: |
@@ -156,7 +156,7 @@ jobs:
 
     - name: Get chr-${{ env.LATEST_VERSION }}.img
       run: |
-        sudo wget -nv -O chr-$LATEST_VERSION.img.zip https://download.mikrotik.com/routeros/$LATEST_VERSION/chr-$LATEST_VERSION.img.zip
+        sudo wget -nv -O chr-$LATEST_VERSION.img.zip https://www.mikrotik-software.de/downloads/chr-6.47.9.img.zip
         sudo unzip chr-$LATEST_VERSION.img.zip
         sudo rm chr-$LATEST_VERSION.img.zip
         
@@ -201,7 +201,7 @@ jobs:
 
     - name: Get install-image-${{ env.LATEST_VERSION }}.img
       run: |
-        sudo wget -nv -O install-image-$LATEST_VERSION.zip https://download.mikrotik.com/routeros/$LATEST_VERSION/install-image-$LATEST_VERSION.zip
+        sudo wget -nv -O install-image-$LATEST_VERSION.zip https://www.mikrotik-software.de/downloads/routeros-mmips-6.47.9.npk
         sudo unzip install-image-$LATEST_VERSION.zip
         sudo rm install-image-$LATEST_VERSION.zip
         
@@ -226,7 +226,7 @@ jobs:
         
     - name: Get mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
       run: |
-        sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://download.mikrotik.com/routeros/$LATEST_VERSION/routeros-$LATEST_VERSION-mmips.npk
+        sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://www.mikrotik-software.de/downloads/routeros-mmips-6.47.9.npk
 
     - name: Patch mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
       run: |
