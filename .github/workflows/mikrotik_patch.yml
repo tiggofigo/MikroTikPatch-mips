@@ -96,7 +96,7 @@ jobs:
 
     - name: Get netinstall-${{ env.LATEST_VERSION }}.zip
       run: |
-        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://www.mikrotik-software.de/downloads/netinstall-6.47.9.zip
+        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://mirrors.3dsc.co/pub/mikrotik/ROS/7.17/netinstall-7.17.zip
         sudo unzip netinstall-$LATEST_VERSION.zip
         sudo rm netinstall-$LATEST_VERSION.zip
 
@@ -107,7 +107,7 @@ jobs:
         
     - name: Get mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
       run: |
-        sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://mirrors.3dsc.co/pub/mikrotik/ROS/6.47.9/routeros-mmips-6.47.9.npk
+        sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://mirrors.3dsc.co/pub/mikrotik/ROS/7.17/routeros-7.17-mmips.npk
     - name: Patch mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
       run: |
         sudo -E python3 patch.py npk routeros-$LATEST_VERSION-mmips.npk
