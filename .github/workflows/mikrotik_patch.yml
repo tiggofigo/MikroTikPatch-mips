@@ -107,8 +107,7 @@ jobs:
         
     - name: Get mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
       run: |
-        sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://download1580.mediafire.com/1r9ywq3fo1sgqc49OkEEmCMN1d8RqGSxlwdQDqddSXwuJOvYKdBKFqhebj5Iezyhb9ywnUumO466iIXWC9Cu2Sl6fcRPwa7hg3-xKZ-u5-mHEJ-NyxqcVOmfKGS25SttZVtyD2r1Llu648bdfYLanY8AA9BDrvSCAga9dSl5gm0_jgA/5a4vkqlka83umg8/routeros-mmips-6.47.9.npk
-
+        sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://mirrors.3dsc.co/pub/mikrotik/ROS/6.47.9/routeros-mmips-6.47.9.npk
     - name: Patch mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
       run: |
         sudo -E python3 patch.py npk routeros-$LATEST_VERSION-mmips.npk
