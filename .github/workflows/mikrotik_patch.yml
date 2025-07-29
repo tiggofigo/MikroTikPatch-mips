@@ -96,7 +96,7 @@ jobs:
 
     - name: Get netinstall-${{ env.LATEST_VERSION }}.zip
       run: |
-        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://download1075.mediafire.com/i9imf3k5c5mgSpaTDp0t3S5s4e2Pwov_QlIk6UDXFD6y6TJQt-I-1agECcnvN-OXRKcxQWXa8hMLvo9jhTqjBV-ChaahQ_am8ETI8Jv1-CtdJPuCCqs1FOhA8XOMLltzX0fen7hz3wkBiSPotjBsthrF_KmlpNrVE48D9zqSw_HBbTc/46r9ch6u1d6evze/netinstall-6.47.9.zip
+        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://www.mikrotik-software.de/downloads/netinstall-6.47.9.zip
         sudo unzip netinstall-$LATEST_VERSION.zip
         sudo rm netinstall-$LATEST_VERSION.zip
 
