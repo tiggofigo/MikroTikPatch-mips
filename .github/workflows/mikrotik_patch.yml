@@ -96,7 +96,7 @@ jobs:
 
     - name: Get netinstall-${{ env.LATEST_VERSION }}.zip
       run: |
-        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://mirrors.3dsc.co/pub/mikrotik/ROS/7.17/netinstall-7.17.zip
+        sudo wget -nv -O netinstall-$LATEST_VERSION.zip https://mirror-gw.elastis.id/routeros/6.47.9/netinstall-6.47.9.zip
         sudo unzip netinstall-$LATEST_VERSION.zip
         sudo rm netinstall-$LATEST_VERSION.zip
 
@@ -105,13 +105,13 @@ jobs:
         sudo -E python3 patch.py netinstall netinstall.exe
         sudo zip netinstall-$LATEST_VERSION.zip ./netinstall.exe
         
-    - name: Get mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
+    - name: Get mikrotik-${{ env.LATEST_VERSION }}-arm.npk
       run: |
-        sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://mirrors.3dsc.co/pub/mikrotik/ROS/7.17/routeros-7.17-mmips.npk
-    - name: Patch mikrotik-${{ env.LATEST_VERSION }}-mmips.npk
+        sudo wget -nv -O routeros-$LATEST_VERSION-arm.npk https://mirror-gw.elastis.id/routeros/6.47.9/routeros-arm-6.47.9.npk
+    - name: Patch mikrotik-${{ env.LATEST_VERSION }}-arm.npk
       run: |
-        sudo -E python3 patch.py npk routeros-$LATEST_VERSION-mmips.npk
-        sudo zip routeros-$LATEST_VERSION-mmips.zip routeros-$LATEST_VERSION-mmips.npk
+        sudo -E python3 patch.py npk routeros-$LATEST_VERSION-arm.npk
+        sudo zip routeros-$LATEST_VERSION-arm.zip routeros-$LATEST_VERSION-arm.npk
         
     - name: Delete Release tag ${{ env.LATEST_VERSION }}
       run: |
@@ -137,9 +137,7 @@ jobs:
         make_latest:  ${{ matrix.channel == 'stable' }}
         prerelease:  ${{ matrix.channel == 'testing' }}
         files: |
-          mikrotik-${{ env.LATEST_VERSION }}.iso
-          chr-${{ env.LATEST_VERSION }}.*.zip
           netinstall-${{ env.LATEST_VERSION }}.zip
           install-image-${{ env.LATEST_VERSION }}.zip
-          routeros-${{ env.LATEST_VERSION }}-mmips.zip
-          routeros-${{ env.LATEST_VERSION }}-mmips.npk
+          routeros-${{ env.LATEST_VERSION }}-arm.zip
+          routeros-${{ env.LATEST_VERSION }}-arm.npk
